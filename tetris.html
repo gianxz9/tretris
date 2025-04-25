@@ -19,6 +19,7 @@
   canvas {
     border: 1px solid white;
     margin: 235px -633px;
+    
   }
 
   img {
@@ -26,13 +27,26 @@
     width: 330px;
     margin: 242px 302px;
   }
+
+  #borderimg { 
+  border: 10px solid transparent;
+  padding: 155px;
+  border-image: url(border.png) 30 round;
+  position: absolute;
+  height: 324px;
+}
   </style>
 </head>
 <body>
+  <p id="borderimg" ></p>
   <div class="tertis">
     <img src="fundo.jpg">
   <canvas  width="320" height="640" id="game" ></canvas>
   </div>
+  <h3>
+    Pontuação:
+    <span class="score">0</span>
+  </h3>
 <script>
 // https://tetris.fandom.com/wiki/Tetris_Guideline
 
@@ -319,6 +333,12 @@ document.addEventListener('keydown', function(e) {
     }
 
     tetromino.row = row;
+  }
+
+  const $score = document.querySelector(".score")
+  let score = 0
+  function updateScore(updateValue){
+    $score.textContent
   }
 });
 
